@@ -1,5 +1,36 @@
 /* General Styles */
 
+@keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } 
+    }
+  @keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } 
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -26,34 +57,45 @@ h1 {
 
 label {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: monospace;
     margin-bottom: 8px;
-    color: #777;
+    color: rgb(148, 25, 25);
+    animation-name: moveInLeft;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 }
 
 input {
     border: 1px solid #eeeeee;
     padding: 12px;
+    border-radius: 20px;
     outline: none;
+    animation: moveInBottom 0.6s ease-out;
 }
 
 button {
     cursor: pointer;
     padding: 12px;
-    background: #7C5CBF;
+    background: #c8d600;
     border: none;
-    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(58, 61, 88);
     font-size: 16px;
+    border-radius: 20px;
     transition: background .3s ease;
+    animation: moveInBottom 0.8s ease-out;
+    
 }
 
 button:hover {
-    background: #6b47b8;
+    background: #7eb847;
 }
 
 button:disabled {
     cursor: default;
-    background: #7c5cbf94;
+    background: #6cc86463;
 }
 
 /* Join Page Styles */
@@ -69,9 +111,12 @@ button:disabled {
 
 .centered-form__box {
     box-shadow: 0px 0px 17px 1px #1D1F26;
-    background: #F7F7FA;
+    background: #03c9e4;
+    border-radius: 12px;
     padding: 24px;
     width: 250px;
+    animation: moveInBottom .4s ;
+    animation-fill-mode: backwards;
 }
 
 .centered-form button {
@@ -115,7 +160,9 @@ button:disabled {
 /* Message Styles */
 
 .message {
-    margin-bottom: 16px;   
+    margin-bottom: 16px;
+    animation: moveInBottom .5s ease-out .2s;
+    animation-fill-mode: backwards;   
 }
 
 .message__name {
@@ -167,6 +214,9 @@ button:disabled {
     font-size: 22px;
     background: #2c2f3a;
     padding: 24px;   
+    animation-name: moveInLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out 1;
 }
 
 .list-title {
